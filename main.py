@@ -4,18 +4,14 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 from pathlib import Path
 
-myself = Path(__file__).resolve()
-model_metrics =  myself.parents[0] / 'model_metrics.csv'
 
 st.set_page_config(layout="wide", page_title="Hello")
 st.title("Коршиков Е. Д._2023-ФГиИБ-ПИ-1б_12 Вариант_Датасет о безопасности воды") 
 
-current_dir = Path(__file__).parent
 
 selected = st.sidebar.radio("Навигация", ["Model metrics", "Dataset info", "HeatMap"])
 if selected == "Dataset info":
-    file_path = current_dir / "Dataset_info.py"
-    with open(file_path, 'r', encoding='utf-8') as f:
+    with open("Dataset_info.py", 'r', encoding='utf-8') as f:
         exec(f.read())
 elif selected == "HeatMap":
     with open("HeatMap.py", 'r', encoding='utf-8') as f:
@@ -23,7 +19,7 @@ elif selected == "HeatMap":
 elif selected == "Model metrics":
   # Загрузка метрик модели
   def load_metrics():
-      return pd.read_csv(model_metrics)
+      return pd.read_csv('model_metrics.csv')
 
   metrics_df = load_metrics()
 
