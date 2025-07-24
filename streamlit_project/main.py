@@ -5,8 +5,6 @@ import plotly.express as px
 from pathlib import Path
 
 myself = Path(__file__).resolve()
-HeatMap = myself.parents[0] / 'Heatmap.py'
-Dataset_info = myself.parents[0] / 'Dataset_info.py'
 model_metrics =  myself.parents[0] / 'model_metrics.csv'
 
 st.set_page_config(layout="wide", page_title="Hello")
