@@ -20,7 +20,7 @@ if selected == "Dataset info":
     with open(file_path, 'r', encoding='utf-8') as f:
         exec(f.read())
 elif selected == "HeatMap":
-    file_path = current_dir / "Heatmap.py"
+    file_path = current_dir / "HeatMap.py"
     with open(file_path, 'r', encoding='utf-8') as f:
         exec(f.read())
 elif selected == "Model metrics":
